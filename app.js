@@ -4,6 +4,7 @@
  */
 
 var express = require('express'),
+    routes = require('./routes'),
     image = require('./routes/image'),
     http = require('http'),
     path = require('path');
@@ -16,7 +17,6 @@ app.configure(function() {
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
@@ -26,7 +26,8 @@ app.configure('development', function() {
   app.use(express.errorHandler());
 });
 
-app.get('/', image.get);
+app.get('/', routes.index);
+app.get('/images/:key.:format', image.get);
 app.post('/', image.create);
 
 http.createServer(app).listen(app.get('port'), function() {

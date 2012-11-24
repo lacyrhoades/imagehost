@@ -6,7 +6,9 @@
     "start": "node app"
   },
   "dependencies": {
+    "buffertools": "*",
     "express": "3.0.3",
+    "formidable": "*",
     "imageinfo": "*",
     "jade": "*",
     "redis": "*",

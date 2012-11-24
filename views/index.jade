@@ -1,0 +1,14 @@
+doctype 5
+html(lang="en")
+  head
+    title "imagehost"
+  body
+    h1 imagehost
+    p node.js + redis image host
+    ul
+        each image in images
+            li
+                a(href="images/"+image.id+"."+image.format)= image.id
+    form(method="POST", enctype="multipart/form-data")
+        input(name="image", type="file", accept="image/*")
+        button(type="submit") Go
