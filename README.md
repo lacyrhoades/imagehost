@@ -14,6 +14,9 @@ hosted
 
 config
 ------
+* forever -l /path/to/file.log app.js
+* a2enmod proxy
+* a2enmod proxy_http
 
 /etc/apache2/sites-available/images.colordeaf.net
 
