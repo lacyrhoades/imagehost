@@ -1,7 +1,7 @@
 imagehost
 =========
 
-node.js image host using express
+node.js image host
 
 usage
 -----
@@ -10,7 +10,7 @@ usage
 
 hosted
 ------
-* images.colordeaf.net
+* imagehost.colordeaf.net
 
 config
 ------
@@ -18,10 +18,10 @@ config
 * a2enmod proxy
 * a2enmod proxy_http
 
-/etc/apache2/sites-available/images.colordeaf.net
+/etc/apache2/sites-available/imagehost.colordeaf.net
 
     <VirtualHost 74.207.243.153:80>
-         ServerName images.colordeaf.net
+         ServerName imagehost.colordeaf.net
 
          ProxyRequests Off
          <Proxy *>
@@ -29,15 +29,15 @@ config
             Allow from all
          </Proxy>
  
-         ProxyPass / http://images.colordeaf.net:3000/
-         ProxyPassReverse / http://images.colordeaf.net:3000/
+         ProxyPass / http://imagehost.colordeaf.net:3000/
+         ProxyPassReverse / http://imagehost.colordeaf.net:3000/
          <Location />
             Order allow,deny
             Allow from all
          </Location>
 
-         ErrorLog /var/www/images.colordeaf.net/logs/error.log
-         CustomLog /var/www/images.colordeaf.net/logs/access.log combined
+         ErrorLog /var/www/imagehost.colordeaf.net/logs/error.log
+         CustomLog /var/www/imagehost.colordeaf.net/logs/access.log combined
     </VirtualHost>
 
 
