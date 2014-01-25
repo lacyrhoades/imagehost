@@ -12,9 +12,9 @@ usage
 
 npm notes
 ---------
-npm install -g forever (globally installs ```forever``` to like /usr/local/bin/forever)
-npm update (in app dir, updates libraries used in this project)
-npm update -g (for global updates)
+* npm install -g forever (globally installs ```forever``` to like /usr/local/bin/forever)
+* npm update (in app dir, updates libraries used in this project)
+* npm update -g (for global updates)
 
 forever
 -------
