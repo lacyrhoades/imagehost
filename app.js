@@ -15,12 +15,12 @@ app.configure(function() {
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+  app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico')));
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
-  app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico')));
 });
 
 app.configure('development', function() {
@@ -28,7 +28,7 @@ app.configure('development', function() {
 });
 
 app.get('/', routes.index);
-app.get('/images/:key.:format', image.get);
+app.get('/routes/:key.:format', image.get);
 app.post('/', image.create);
 
 http.createServer(app).listen(app.get('port'), function() {
